@@ -1,0 +1,2316 @@
+[
+  {
+    "title": "Fundamentals of Wavelets",
+    "author": "Jaideva Goswami",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "signal processing",
+      "tech"
+    ],
+    "pages": 228
+  },
+  {
+    "title": "Data Smart",
+    "author": "John Foreman",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 235
+  },
+  {
+    "title": "God Created the Integers",
+    "author": "Stephen Hawking",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "tech"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "Superfreakonomics",
+    "author": "Stephen Dubner",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "science"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Orientalism",
+    "author": "Edward Said",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "The Nature of Statistical Learning Theory",
+    "author": "Vladimir Vapnik",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 230
+  },
+  {
+    "title": "Integration of the Indian States",
+    "author": "V P Menon",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 217
+  },
+  {
+    "title": "The Drunkard's Walk",
+    "author": "Leonard Mlodinow",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "Image Processing & Mathematical Morphology",
+    "author": "Frank Shih",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "signal processing",
+      "tech"
+    ],
+    "pages": 241
+  },
+  {
+    "title": "How to Think Like Sherlock Holmes",
+    "author": "Maria Konnikova",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "psychology",
+      "nonfiction"
+    ],
+    "pages": 240
+  },
+  {
+    "title": "Data Scientists at Work",
+    "author": "Sebastian Gutierrez",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 230
+  },
+  {
+    "title": "Slaughterhouse Five",
+    "author": "Kurt Vonnegut",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "Birth of a Theorem",
+    "author": "Cedric Villani",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 234
+  },
+  {
+    "title": "Structure & Interpretation of Computer Programs",
+    "author": "Gerald Sussman",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 240
+  },
+  {
+    "title": "The Age of Wrath",
+    "author": "Abraham Eraly",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 238
+  },
+  {
+    "title": "The Trial",
+    "author": "Frank Kafka",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "Statistical Decision Theory'",
+    "author": "John Pratt",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 236
+  },
+  {
+    "title": "Data Mining Handbook",
+    "author": "Robert Nisbet",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 242
+  },
+  {
+    "title": "The New Machiavelli",
+    "author": "H. G. Wells",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Physics & Philosophy",
+    "author": "Werner Heisenberg",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "science",
+      "philosophy"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "Making Software",
+    "author": "Andy Oram",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 232
+  },
+  {
+    "title": "Analysis, Vol I",
+    "author": "Terence Tao",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "tech"
+    ],
+    "pages": 248
+  },
+  {
+    "title": "Machine Learning for Hackers",
+    "author": "Drew Conway",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 233
+  },
+  {
+    "title": "The Signal and the Noise",
+    "author": "Nate Silver",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 233
+  },
+  {
+    "title": "Python for Data Analysis",
+    "author": "Wes McKinney",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 233
+  },
+  {
+    "title": "Introduction to Algorithms",
+    "author": "Thomas Cormen",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 234
+  },
+  {
+    "title": "The Beautiful and the Damned",
+    "author": "Siddhartha Deb",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "The Outsider",
+    "author": "Albert Camus",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "Complete Sherlock Holmes, The - Vol I",
+    "author": "Arthur Conan Doyle",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 176
+  },
+  {
+    "title": "Complete Sherlock Holmes, The - Vol II",
+    "author": "Arthur Conan Doyle",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 176
+  },
+  {
+    "title": "The Wealth of Nations",
+    "author": "Adam Smith",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "science"
+    ],
+    "pages": 175
+  },
+  {
+    "title": "The Pillars of the Earth",
+    "author": "Ken Follett",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 176
+  },
+  {
+    "title": "Mein Kampf",
+    "author": "Adolf Hitler",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 212
+  },
+  {
+    "title": "The Tao of Physics",
+    "author": "Fritjof Capra",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "physics",
+      "science"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Surely You're Joking Mr Feynman",
+    "author": "Richard Feynman",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "physics",
+      "science"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "A Farewell to Arms",
+    "author": "Ernest Hemingway",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "The Veteran",
+    "author": "Frederick Forsyth",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 177
+  },
+  {
+    "title": "False Impressions",
+    "author": "Jeffery Archer",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 177
+  },
+  {
+    "title": "The Last Lecture",
+    "author": "Randy Pausch",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "Return of the Primitive",
+    "author": "Ayn Rand",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "objectivism",
+      "philosophy"
+    ],
+    "pages": 202
+  },
+  {
+    "title": "Jurassic Park",
+    "author": "Michael Crichton",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 174
+  },
+  {
+    "title": "A Russian Journal",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "Tales of Mystery and Imagination",
+    "author": "Edgar Allen Poe",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 172
+  },
+  {
+    "title": "Freakonomics",
+    "author": "Stephen Dubner",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "science"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "The Hidden Connections",
+    "author": "Fritjof Capra",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "physics",
+      "science"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "The Story of Philosophy",
+    "author": "Will Durant",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "history",
+      "philosophy"
+    ],
+    "pages": 170
+  },
+  {
+    "title": "Asami Asami",
+    "author": "P L Deshpande",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 205
+  },
+  {
+    "title": "Journal of a Novel",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "Once There Was a War",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "The Moon is Down",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "The Brethren",
+    "author": "John Grisham",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 174
+  },
+  {
+    "title": "In a Free State",
+    "author": "V. S. Naipaul",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "Catch 22",
+    "author": "Joseph Heller",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "The Complete Mastermind",
+    "author": "BBC",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "trivia",
+      "nonfiction"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "Dylan on Dylan",
+    "author": "Bob Dylan",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "Soft Computing & Intelligent Systems",
+    "author": "Madan Gupta",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 242
+  },
+  {
+    "title": "Textbook of Economic Theory",
+    "author": "Alfred Stonier",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "tech"
+    ],
+    "pages": 242
+  },
+  {
+    "title": "Econometric Analysis",
+    "author": "W. H. Greene",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "tech"
+    ],
+    "pages": 242
+  },
+  {
+    "title": "Learning OpenCV",
+    "author": "Gary Bradsky",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "signal processing",
+      "tech"
+    ],
+    "pages": 232
+  },
+  {
+    "title": "Data Structures Using C & C++",
+    "author": "Andrew Tanenbaum",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 235
+  },
+  {
+    "title": "Computer Vision, A Modern Approach",
+    "author": "David Forsyth",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "signal processing",
+      "tech"
+    ],
+    "pages": 255
+  },
+  {
+    "title": "Principles of Communication Systems",
+    "author": "Schilling Taub",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "signal processing",
+      "tech"
+    ],
+    "pages": 240
+  },
+  {
+    "title": "Let Us C",
+    "author": "Yashwant Kanetkar",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 213
+  },
+  {
+    "title": "The Amulet of Samarkand",
+    "author": "Jonathan Stroud",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Angels & Demons",
+    "author": "Dan Brown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "The Argumentative Indian",
+    "author": "Amartya Sen",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 209
+  },
+  {
+    "title": "Sea of Poppies",
+    "author": "Amitav Ghosh",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "The Idea of Justice",
+    "author": "Amartya Sen",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "economics",
+      "philosophy"
+    ],
+    "pages": 212
+  },
+  {
+    "title": "A Raisin in the Sun",
+    "author": "Lorraine Hansberry",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 175
+  },
+  {
+    "title": "All the President's Men",
+    "author": "Bob Woodward",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 177
+  },
+  {
+    "title": "A Prisoner of Birth",
+    "author": "Jeffery Archer",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 176
+  },
+  {
+    "title": "Scoop!",
+    "author": "Kuldip Nayar",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 216
+  },
+  {
+    "title": "Ahe Manohar Tari",
+    "author": "Sunita Deshpande",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 213
+  },
+  {
+    "title": "The Last Mughal",
+    "author": "William Dalrymple",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 199
+  },
+  {
+    "title": "Social Choice & Welfare, Vol 39 No. 1",
+    "author": "Various",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "tech"
+    ],
+    "pages": 235
+  },
+  {
+    "title": "Radiowaril Bhashane & Shrutika",
+    "author": "P L Deshpande",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "misc",
+      "nonfiction"
+    ],
+    "pages": 213
+  },
+  {
+    "title": "Gun Gayin Awadi",
+    "author": "P L Deshpande",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "misc",
+      "nonfiction"
+    ],
+    "pages": 212
+  },
+  {
+    "title": "Aghal Paghal",
+    "author": "P L Deshpande",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "misc",
+      "nonfiction"
+    ],
+    "pages": 212
+  },
+  {
+    "title": "Maqta-e-Ghalib",
+    "author": "Sanjay Garg",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "poetry",
+      "nonfiction"
+    ],
+    "pages": 221
+  },
+  {
+    "title": "Beyond Degrees",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "education",
+      "philosophy"
+    ],
+    "pages": 222
+  },
+  {
+    "title": "Manasa",
+    "author": "V P Kale",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "misc",
+      "nonfiction"
+    ],
+    "pages": 213
+  },
+  {
+    "title": "India from Midnight to Milennium",
+    "author": "Shashi Tharoor",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "The World's Greatest Trials",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 210
+  },
+  {
+    "title": "The Great Indian Novel",
+    "author": "Shashi Tharoor",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "O Jerusalem!",
+    "author": "Dominique Lapierre",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 217
+  },
+  {
+    "title": "The City of Joy",
+    "author": "Dominique Lapierre",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 177
+  },
+  {
+    "title": "Freedom at Midnight",
+    "author": "Dominique Lapierre",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 167
+  },
+  {
+    "title": "The Winter of Our Discontent",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "On Education",
+    "author": "Bertrand Russell",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "education",
+      "philosophy"
+    ],
+    "pages": 203
+  },
+  {
+    "title": "Free Will",
+    "author": "Sam Harris",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "psychology",
+      "nonfiction"
+    ],
+    "pages": 203
+  },
+  {
+    "title": "Bookless in Baghdad",
+    "author": "Shashi Tharoor",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 206
+  },
+  {
+    "title": "The Case of the Lame Canary",
+    "author": "Earle Stanley Gardner",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "The Theory of Everything",
+    "author": "Stephen Hawking",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "physics",
+      "science"
+    ],
+    "pages": 217
+  },
+  {
+    "title": "New Markets & Other Essays",
+    "author": "Peter Drucker",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "science"
+    ],
+    "pages": 176
+  },
+  {
+    "title": "Electric Universe",
+    "author": "David Bodanis",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "physics",
+      "science"
+    ],
+    "pages": 201
+  },
+  {
+    "title": "The Hunchback of Notre Dame",
+    "author": "Victor Hugo",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 175
+  },
+  {
+    "title": "Burning Bright",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 175
+  },
+  {
+    "title": "The Age of Discontuinity",
+    "author": "Peter Drucker",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "economics",
+      "nonfiction"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "Doctor in the Nude",
+    "author": "Richard Gordon",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Down and Out in Paris & London",
+    "author": "George Orwell",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Identity & Violence",
+    "author": "Amartya Sen",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "philosophy"
+    ],
+    "pages": 219
+  },
+  {
+    "title": "Beyond the Three Seas",
+    "author": "William Dalrymple",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "The World's Greatest Short Stories",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 217
+  },
+  {
+    "title": "Talking Straight",
+    "author": "Lee Iacoca",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 175
+  },
+  {
+    "title": "Maugham's Collected Short Stories, Vol 3",
+    "author": "William S Maugham",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 171
+  },
+  {
+    "title": "The Phantom of Manhattan",
+    "author": "Frederick Forsyth",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Ashenden of The British Agent",
+    "author": "William S Maugham",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 160
+  },
+  {
+    "title": "Zen & The Art of Motorcycle Maintenance",
+    "author": "Robert Pirsig",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "autobiography",
+      "philosophy"
+    ],
+    "pages": 172
+  },
+  {
+    "title": "The Great War for Civilization",
+    "author": "Robert Fisk",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "We the Living",
+    "author": "Ayn Rand",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "The Artist and the Mathematician",
+    "author": "Amir Aczel",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 186
+  },
+  {
+    "title": "History of Western Philosophy",
+    "author": "Bertrand Russell",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "philosophy"
+    ],
+    "pages": 213
+  },
+  {
+    "title": "Selected Short Stories",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 215
+  },
+  {
+    "title": "Rationality & Freedom",
+    "author": "Amartya Sen",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "science"
+    ],
+    "pages": 213
+  },
+  {
+    "title": "Clash of Civilizations and Remaking of the World Order",
+    "author": "Samuel Huntington",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 228
+  },
+  {
+    "title": "Uncommon Wisdom",
+    "author": "Fritjof Capra",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "anthology",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "One",
+    "author": "Richard Bach",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 172
+  },
+  {
+    "title": "Karl Marx Biography",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 162
+  },
+  {
+    "title": "To Sir With Love",
+    "author": "Braithwaite",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "Half A Life",
+    "author": "V S Naipaul",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "The Discovery of India",
+    "author": "Jawaharlal Nehru",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 230
+  },
+  {
+    "title": "Apulki",
+    "author": "P L Deshpande",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "misc",
+      "nonfiction"
+    ],
+    "pages": 211
+  },
+  {
+    "title": "Unpopular Essays",
+    "author": "Bertrand Russell",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "philosophy"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "The Deceiver",
+    "author": "Frederick Forsyth",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "Veil: Secret Wars of the CIA",
+    "author": "Bob Woodward",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 171
+  },
+  {
+    "title": "Char Shabda",
+    "author": "P L Deshpande",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "misc",
+      "nonfiction"
+    ],
+    "pages": 214
+  },
+  {
+    "title": "Rosy is My Relative",
+    "author": "Gerald Durrell",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 176
+  },
+  {
+    "title": "The Moon and Sixpence",
+    "author": "William S Maugham",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Political Philosophers",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "politics",
+      "philosophy"
+    ],
+    "pages": 162
+  },
+  {
+    "title": "A Short History of the World",
+    "author": "H G Wells",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "The Trembling of a Leaf",
+    "author": "William S Maugham",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 205
+  },
+  {
+    "title": "Doctor on the Brain",
+    "author": "Richard Gordon",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 204
+  },
+  {
+    "title": "Simpsons & Their Mathematical Secrets",
+    "author": "Simon Singh",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 233
+  },
+  {
+    "title": "Pattern Classification",
+    "author": "Hart Duda",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 241
+  },
+  {
+    "title": "From Beirut to Jerusalem",
+    "author": "Thomas Friedman",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 202
+  },
+  {
+    "title": "The Code Book",
+    "author": "Simon Singh",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "The Age of the Warrior",
+    "author": "Robert Fisk",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "Final Crisis",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 257
+  },
+  {
+    "title": "The Killing Joke",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 283
+  },
+  {
+    "title": "Flashpoint",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 265
+  },
+  {
+    "title": "Batman Earth One",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 265
+  },
+  {
+    "title": "Crisis on Infinite Earths",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 258
+  },
+  {
+    "title": "The Numbers Behind Numb3rs",
+    "author": "Keith Devlin",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 202
+  },
+  {
+    "title": "Superman Earth One - 1",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 259
+  },
+  {
+    "title": "Superman Earth One - 2",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 258
+  },
+  {
+    "title": "Justice League: Throne of Atlantis",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 258
+  },
+  {
+    "title": "Justice League: The Villain's Journey",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 258
+  },
+  {
+    "title": "The Death of Superman",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 258
+  },
+  {
+    "title": "History of the DC Universe",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 258
+  },
+  {
+    "title": "Batman: The Long Halloween",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 258
+  },
+  {
+    "title": "A Life in Letters",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "The Information",
+    "author": "James Gleick",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 233
+  },
+  {
+    "title": "Journal of Economics, vol 106 No 3",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "economics",
+      "science"
+    ],
+    "pages": 235
+  },
+  {
+    "title": "Elements of Information Theory",
+    "author": "Joy Thomas",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "signal processing",
+      "tech"
+    ],
+    "pages": 229
+  },
+  {
+    "title": "Power Electronics - Rashid",
+    "author": "Muhammad Rashid",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 235
+  },
+  {
+    "title": "Power Electronics - Mohan",
+    "author": "Ned Mohan",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 237
+  },
+  {
+    "title": "Neural Networks",
+    "author": "Simon Haykin",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 240
+  },
+  {
+    "title": "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "Vyakti ani Valli",
+    "author": "P L Deshpande",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "misc",
+      "nonfiction"
+    ],
+    "pages": 211
+  },
+  {
+    "title": "Statistical Learning Theory",
+    "author": "Vladimir Vapnik",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 228
+  },
+  {
+    "title": "Empire of the Mughal - The Tainted Throne",
+    "author": "Alex Rutherford",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Empire of the Mughal - Brothers at War",
+    "author": "Alex Rutherford",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Empire of the Mughal - Ruler of the World",
+    "author": "Alex Rutherford",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Empire of the Mughal - The Serpent's Tooth",
+    "author": "Alex Rutherford",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Empire of the Mughal - Raiders from the North",
+    "author": "Alex Rutherford",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Mossad",
+    "author": "Michael Baz-Zohar",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 236
+  },
+  {
+    "title": "Jim Corbett Omnibus",
+    "author": "Jim Corbett",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 223
+  },
+  {
+    "title": "20000 Leagues Under the Sea",
+    "author": "Jules Verne",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 190
+  },
+  {
+    "title": "Batatyachi Chal",
+    "author": "Deshpande P L",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 200
+  },
+  {
+    "title": "Hafasavnuk",
+    "author": "Deshpande P L",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 211
+  },
+  {
+    "title": "Urlasurla",
+    "author": "Deshpande P L",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 211
+  },
+  {
+    "title": "Pointers in C",
+    "author": "Yashwant Kanetkar",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 213
+  },
+  {
+    "title": "The Cathedral and the Bazaar",
+    "author": "Eric Raymond",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 217
+  },
+  {
+    "title": "Design with OpAmps",
+    "author": "Sergio Franco",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "computer science",
+      "tech"
+    ],
+    "pages": 240
+  },
+  {
+    "title": "Think Complexity",
+    "author": "Allen Downey",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 230
+  },
+  {
+    "title": "The Devil's Advocate",
+    "author": "Morris West",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "Ayn Rand Answers",
+    "author": "Ayn Rand",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "objectivism",
+      "philosophy"
+    ],
+    "pages": 203
+  },
+  {
+    "title": "Philosophy: Who Needs It",
+    "author": "Ayn Rand",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "objectivism",
+      "philosophy"
+    ],
+    "pages": 171
+  },
+  {
+    "title": "The World's Great Thinkers",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "physics",
+      "science"
+    ],
+    "pages": 189
+  },
+  {
+    "title": "Data Analysis with Open Source Tools",
+    "author": "Phillip Janert",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "data science",
+      "tech"
+    ],
+    "pages": 230
+  },
+  {
+    "title": "Broca's Brain",
+    "author": "Carl Sagan",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "physics",
+      "science"
+    ],
+    "pages": 174
+  },
+  {
+    "title": "Men of Mathematics",
+    "author": "E T Bell",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 217
+  },
+  {
+    "title": "Oxford book of Modern Science Writing",
+    "author": "Richard Dawkins",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "science"
+    ],
+    "pages": 240
+  },
+  {
+    "title": "Justice, Judiciary and Democracy",
+    "author": "Sudhanshu Ranjan",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "legal",
+      "nonfiction"
+    ],
+    "pages": 224
+  },
+  {
+    "title": "The Arthashastra",
+    "author": "Kautiyla",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "philosophy"
+    ],
+    "pages": 214
+  },
+  {
+    "title": "We the People",
+    "author": "Palkhivala",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "philosophy"
+    ],
+    "pages": 216
+  },
+  {
+    "title": "We the Nation",
+    "author": "Palkhivala",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "philosophy"
+    ],
+    "pages": 216
+  },
+  {
+    "title": "The Courtroom Genius",
+    "author": "Sorabjee",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "autobiography",
+      "nonfiction"
+    ],
+    "pages": 217
+  },
+  {
+    "title": "Dongri to Dubai",
+    "author": "Hussain Zaidi",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 216
+  },
+  {
+    "title": "History of England, Foundation",
+    "author": "Peter Ackroyd",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "City of Djinns",
+    "author": "William Dalrymple",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "history",
+      "nonfiction"
+    ],
+    "pages": 198
+  },
+  {
+    "title": "India's Legal System",
+    "author": "Nariman",
+    "year": "",
+    "genre": "Non-Fiction",
+    "subjects": [
+      "legal",
+      "nonfiction"
+    ],
+    "pages": 177
+  },
+  {
+    "title": "More Tears to Cry",
+    "author": "Jean Sassoon",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 235
+  },
+  {
+    "title": "The Ropemaker",
+    "author": "Peter Dickinson",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 196
+  },
+  {
+    "title": "Angels & Demons",
+    "author": "Dan Brown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 170
+  },
+  {
+    "title": "The Judge",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 170
+  },
+  {
+    "title": "The Attorney",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 170
+  },
+  {
+    "title": "The Prince",
+    "author": "Machiavelli",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 173
+  },
+  {
+    "title": "Eyeless in Gaza",
+    "author": "Aldous Huxley",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "Tales of Beedle the Bard",
+    "author": "J K Rowling",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 184
+  },
+  {
+    "title": "Girl with the Dragon Tattoo",
+    "author": "Steig Larsson",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Girl who kicked the Hornet's Nest",
+    "author": "Steig Larsson",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Girl who played with Fire",
+    "author": "Steig Larsson",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "novel",
+      "fiction"
+    ],
+    "pages": 179
+  },
+  {
+    "title": "Batman Handbook",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "comic",
+      "fiction"
+    ],
+    "pages": 270
+  },
+  {
+    "title": "Murphy's Law",
+    "author": "Unknown",
+    "year": "",
+    "genre": "Philosophy",
+    "subjects": [
+      "psychology",
+      "philosophy"
+    ],
+    "pages": 178
+  },
+  {
+    "title": "Structure and Randomness",
+    "author": "Terence Tao",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "mathematics",
+      "science"
+    ],
+    "pages": 252
+  },
+  {
+    "title": "Image Processing with MATLAB",
+    "author": "Steve Eddins",
+    "year": "",
+    "genre": "Science",
+    "subjects": [
+      "signal processing",
+      "tech"
+    ],
+    "pages": 241
+  },
+  {
+    "title": "Animal Farm",
+    "author": "George Orwell",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 180
+  },
+  {
+    "title": "The Idiot",
+    "author": "Fyodor Dostoevsky",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 197
+  },
+  {
+    "title": "A Christmas Carol",
+    "author": "Charles Dickens",
+    "year": "",
+    "genre": "Fiction",
+    "subjects": [
+      "classic",
+      "fiction"
+    ],
+    "pages": 196
+  }
+]
