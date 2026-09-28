@@ -37,9 +37,8 @@ Single Python script generates a self-contained HTML/PWA (vanilla JS, HTML5 Canv
 - Keep PWA installability (manifest, service worker, icon) — re-implement via Vite's PWA tooling rather than hand-rolled
 
 ## Out of scope (still)
-- Real backend auth / real social features (Login/Social stay stubs)
+- Real social features (Login stays a stub; Social panel stays a stub — accounts are now in scope for sync/billing, see below, but friend/social features are not)
 - Real-time collaboration
-- Cloud sync of library data across devices
 - Changing the core visual metaphor (star field) to a freeform mind map
 
 ## Post-MVP: Commercial launch gaps (2026-09-28 gap analysis)
@@ -61,7 +60,7 @@ The rebuild is feature-complete against v1 and deployed, but not commercially sh
 4. No app store presence — PWA-only, Tauri/Capacitor deferred, limits discoverability
 5. No brand assets (logo, screenshots, store copy) or competitive teardown vs. Goodreads/StoryGraph/LibraryThing
 
-**Decision needed before any of this becomes a spec:** backend/auth stack and monetization model — both expensive to build wrong and gate the rest of the list.
+**Decided 2026-09-28:** Backend/auth stack — **Supabase** (Postgres + auth + storage). Monetization — **freemium**: local-only (today's app) stays free forever; a paid tier unlocks cross-device cloud sync, accounts, and unlimited books. This moves "real backend auth" and "cloud sync" from Out of scope (above) into scope, gated by tier.
 
 ## Constraints
 - Platform: Web app first (PWA); desktop (Tauri) and mobile (Capacitor) wrap the same codebase later — one engine, three shells
@@ -70,6 +69,8 @@ The rebuild is feature-complete against v1 and deployed, but not commercially sh
 - Data: Local-only for library content (no change from v1's local-only model); pick IndexedDB vs. localStorage in the Design spec — IndexedDB better fits larger libraries and cover-image caching
 - Privacy: Analytics on by default, opt-out in settings, visible privacy notice on first run. Tracks product usage (feature/flow events, session counts) and performance/crash data — never book titles, authors, notes, or map content. Library data itself stays local-only, unaffected by analytics.
 - Analytics stack: PostHog (product usage/events) + Sentry (crash reports, performance) — both third-party, both support scrubbing PII before send
+- Backend (2026-09-28): Supabase — Postgres for accounts/library sync, Supabase Auth for login, Supabase Storage for cover-image caching (post-MVP, not this spec). Free tier stays fully local/IndexedDB, unaffected; sync is additive, not a replacement — local-only must keep working with zero backend calls
+- Monetization (2026-09-28): freemium — free tier is local-only (current app, unchanged); paid tier gates cross-device sync/accounts/unlimited books. Billing/Stripe integration is separate scope from the auth+sync foundation (spec 14 below covers auth+sync only, not billing)
 
 ## Success metrics (control bands)
 | Metric | Target | Breach trigger |
@@ -115,3 +116,5 @@ The rebuild is feature-complete against v1 and deployed, but not commercially sh
 | 2026-09-28 | Wrote spec 13: first Maintain-stage work — wire render fps, ISBN success rate, import round-trip, and crash-free sessions to the analytics adapter; document the PostHog/Sentry dashboard setup as a manual checklist item, same treatment as spec 10's Pages-enable step | intent.md's success-metrics table has had four runtime metrics with zero signal since it was written |
 | 2026-09-28 | Spec 13 built and verified: `ErrorBoundary` (crash-free signal + graceful fallback, since @sentry/browser alone doesn't catch React render errors), ISBN lookup success/not-found/failed events, import round-trip's `flagged` count added to `import_completed`, render fps sampled every ~10s. 64 unit tests passing (added a direct render-and-throw test for ErrorBoundary — its catch path can't be reached via the browser smoke test since the render loop runs in rAF, outside React's error-boundary scope). Typecheck clean, build succeeds, browser smoke test confirms the ISBN error path and the import ready/flagged split both render correctly. PostHog/Sentry secrets + dashboard alerts remain a manual checklist item (spec 13), not yet done. | Closes spec 13; first Maintain-stage code in the project |
 | 2026-09-28 | Ran a commercial-launch gap analysis (engineering + marketing); logged as new intent.md section "Post-MVP: Commercial launch gaps" | Project is feature-complete against v1 and deployed but not commercially shippable — no accounts/sync, no backend, no legal, no monetization, no GTM; recorded as scope rather than acted on silently |
+| 2026-09-28 | Backend/auth stack: Supabase. Monetization: freemium (free = local-only unchanged; paid = cross-device sync/accounts). "Real backend auth" and "cloud sync" moved from Out of scope into scope, gated by tier | User's explicit choice between Supabase/Firebase/custom/stay-local and freemium/one-time/free/undecided |
+| 2026-09-28 | Wrote spec 14: Supabase auth + library sync foundation, scoped to auth+sync only — billing/tier-gating enforcement is separate future scope, not this spec | Foundation must exist before a paid tier can gate anything; billing integration (Stripe) is its own build with its own risk surface |
