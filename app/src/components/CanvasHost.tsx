@@ -9,6 +9,7 @@ import { draw, projectAll } from '../render/draw';
 import { pickStar } from '../render/pick';
 import { filterVisible } from '../render/timelapse';
 import { useLibraryStore } from '../store/useLibraryStore';
+import { trackEvent } from '../analytics/analytics';
 
 export function CanvasHost() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -96,12 +97,22 @@ export function CanvasHost() {
     let raf = 0;
     let renderTime = 0;
     let last_t = performance.now();
+    let fpsFrames = 0;
+    let fpsWindowStart = last_t;
 
     function frame(now: number) {
       const state = useLibraryStore.getState();
       const dt = state.frozen ? 0 : Math.min(0.05, (now - last_t) / 1000);
       last_t = now;
       renderTime += dt;
+
+      // Sample average fps once every ~10s — see specs/13-maintain-metrics.md.
+      fpsFrames++;
+      if (now - fpsWindowStart >= 10000) {
+        trackEvent('render_fps_sampled', { fps: Math.round((fpsFrames * 1000) / (now - fpsWindowStart)) });
+        fpsFrames = 0;
+        fpsWindowStart = now;
+      }
 
       if (!dragging) camera.rotY += state.visual.rotationSpeed * dt;
       const connectLit =

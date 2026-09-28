@@ -29,7 +29,7 @@ type LibraryStore = {
   hydrate: () => Promise<void>;
   loadDemo: (books: BookInput[], seed?: number) => void;
   addBook: (book: BookInput, source?: AddBookSource) => void;
-  addBooks: (books: BookInput[]) => void;
+  addBooks: (books: BookInput[], flagged?: number) => void;
   removeBook: (starId: string) => void;
   selectStar: (starId: string) => void;
   enterConnectMode: (starId: string) => void;
@@ -86,12 +86,12 @@ export const useLibraryStore = create<LibraryStore>((set, get) => ({
     trackEvent(source === 'isbn' ? 'book_added_isbn' : 'book_added_manual');
   },
 
-  addBooks: (books) => {
+  addBooks: (books, flagged = 0) => {
     let library = get().library;
     for (const book of books) library = addBookModel(library, book);
     set({ library, synapses: deriveSynapses(library) });
     persist(library, set);
-    trackEvent('import_completed', { count: books.length });
+    trackEvent('import_completed', { count: books.length, flagged });
   },
 
   removeBook: (starId) => {

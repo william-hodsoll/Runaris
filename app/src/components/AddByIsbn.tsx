@@ -4,6 +4,7 @@ import { useState } from 'react';
 import type { BookInput } from '../model/types';
 import { lookupByIsbn } from '../lookup/openLibrary';
 import { useLibraryStore } from '../store/useLibraryStore';
+import { trackEvent } from '../analytics/analytics';
 
 type Status = { kind: 'idle' } | { kind: 'loading' } | { kind: 'error'; message: string } | { kind: 'preview'; book: BookInput };
 
@@ -17,11 +18,14 @@ export function AddByIsbn({ onClose }: { onClose: () => void }) {
     try {
       const book = await lookupByIsbn(isbn);
       if (!book) {
+        trackEvent('isbn_lookup_not_found');
         setStatus({ kind: 'error', message: 'No record found for that ISBN.' });
         return;
       }
+      trackEvent('isbn_lookup_succeeded');
       setStatus({ kind: 'preview', book });
     } catch {
+      trackEvent('isbn_lookup_failed');
       setStatus({ kind: 'error', message: 'Lookup failed. Check your connection and try again.' });
     }
   }

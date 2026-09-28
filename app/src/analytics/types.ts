@@ -12,7 +12,12 @@ export type AnalyticsEvent =
   | 'connect_mode_entered'
   | 'import_completed'
   | 'analytics_opt_out'
-  | 'analytics_opt_in';
+  | 'analytics_opt_in'
+  | 'app_crashed'
+  | 'isbn_lookup_succeeded'
+  | 'isbn_lookup_not_found'
+  | 'isbn_lookup_failed'
+  | 'render_fps_sampled';
 
 // Values are restricted to number/boolean so a string (which could carry a
 // title, author, or note) is not even type-checkable as a prop value.

@@ -22,7 +22,7 @@ export function ImportLibrary({ onClose }: { onClose: () => void }) {
 
   function handleCommit() {
     if (!result) return;
-    addBooks(result.books);
+    addBooks(result.books, result.flagged.length);
     onClose();
   }
 
