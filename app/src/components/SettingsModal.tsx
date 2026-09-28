@@ -4,6 +4,7 @@
 // decision. specs/08-insights-and-settings.md.
 import { useState } from 'react';
 import { isOptedOut, setOptOut } from '../analytics/analytics';
+import { isSyncConfigured } from '../auth/supabaseClient';
 import { downloadLibraryExport } from '../persistence/exportLibrary';
 import { InsightsPanel } from './InsightsPanel';
 import { useLibraryStore } from '../store/useLibraryStore';
@@ -20,6 +21,67 @@ const TABS: { id: Tab; label: string }[] = [
 ];
 
 const STUB_DISCLOSURE = 'This is a visual shell — it doesn\'t connect to anything yet.';
+
+// Magic-link sign-in for cross-device sync (paid tier, once billing exists —
+// spec 14 covers auth+sync only). Hides itself when Supabase isn't
+// configured, same convention as analytics' opt-out toggle.
+function ProfileTab() {
+  const session = useLibraryStore((s) => s.session);
+  const signIn = useLibraryStore((s) => s.signIn);
+  const signOut = useLibraryStore((s) => s.signOut);
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [error, setError] = useState('');
+
+  if (!isSyncConfigured()) {
+    return <div style={{ fontSize: 13, color: '#6b6b63' }}>{STUB_DISCLOSURE}</div>;
+  }
+
+  if (session) {
+    return (
+      <div style={{ fontSize: 13, display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div>Signed in as {session.user.email}</div>
+        <div style={{ color: '#6b6b63' }}>Your library syncs across devices.</div>
+        <button onClick={() => void signOut()} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer', alignSelf: 'flex-start' }}>
+          Sign out
+        </button>
+      </div>
+    );
+  }
+
+  if (status === 'sent') {
+    return <div style={{ fontSize: 13, color: '#6b6b63' }}>Check your email for a sign-in link.</div>;
+  }
+
+  return (
+    <div style={{ fontSize: 13, display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div style={{ color: '#6b6b63' }}>Sign in to sync your library across devices.</div>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="you@example.com"
+        style={{ padding: 8, borderRadius: 8, border: '1px solid #EBEDE0' }}
+      />
+      {status === 'error' && <div style={{ color: '#b4506a' }}>{error}</div>}
+      <button
+        onClick={async () => {
+          setStatus('sending');
+          const result = await signIn(email);
+          if (result.ok) setStatus('sent');
+          else {
+            setStatus('error');
+            setError(result.error);
+          }
+        }}
+        disabled={status === 'sending' || !email.trim()}
+        style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer', alignSelf: 'flex-start' }}
+      >
+        {status === 'sending' ? 'Sending…' : 'Send magic link'}
+      </button>
+    </div>
+  );
+}
 
 export function SettingsModal({ initialTab = 'library', onClose }: { initialTab?: Tab; onClose: () => void }) {
   const [tab, setTab] = useState<Tab>(initialTab);
@@ -97,9 +159,9 @@ export function SettingsModal({ initialTab = 'library', onClose }: { initialTab?
             </label>
           )}
 
-          {(tab === 'profile' || tab === 'social') && (
-            <div style={{ fontSize: 13, color: '#6b6b63' }}>{STUB_DISCLOSURE}</div>
-          )}
+          {tab === 'profile' && <ProfileTab />}
+
+          {tab === 'social' && <div style={{ fontSize: 13, color: '#6b6b63' }}>{STUB_DISCLOSURE}</div>}
 
           {tab === 'about' && (
             <div style={{ fontSize: 13, color: '#6b6b63', display: 'flex', flexDirection: 'column', gap: 6 }}>
