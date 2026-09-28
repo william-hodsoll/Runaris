@@ -34,7 +34,13 @@ export async function initSession(): Promise<Session | null> {
 
 export async function signInWithMagicLink(email: string): Promise<{ ok: true } | { ok: false; error: string }> {
   if (!supabase) return { ok: false, error: 'Sync is not configured.' };
-  const { error } = await supabase.auth.signInWithOtp({ email });
+  // Explicit redirect back to wherever the app is actually running (works
+  // for GitHub Pages' /Runaris/ subpath and local dev alike) instead of
+  // relying on Supabase's configured default Site URL.
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: window.location.origin + window.location.pathname },
+  });
   if (error) return { ok: false, error: error.message };
   return { ok: true };
 }
