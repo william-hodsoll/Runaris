@@ -42,6 +42,27 @@ Single Python script generates a self-contained HTML/PWA (vanilla JS, HTML5 Canv
 - Cloud sync of library data across devices
 - Changing the core visual metaphor (star field) to a freeform mind map
 
+## Post-MVP: Commercial launch gaps (2026-09-28 gap analysis)
+The rebuild is feature-complete against v1 and deployed, but not commercially shippable. Gaps, ranked by blocker severity:
+
+**Engineering**
+1. No accounts / no cross-device sync — library lives in one browser's IndexedDB only; reinstall or cleared storage loses it except via manual JSON export. Gates most items below.
+2. No real backend — Login/Social are intentional stubs (see Out of scope); unshippable as-is, just a demo affordance
+3. No privacy policy, ToS, or consent flow — required before PostHog/Sentry can legally collect from real users, and before app store listing
+4. Analytics dashboards/alerts not configured — spec 13 wired the events, nobody's watching them yet (manual checklist, spec 13)
+5. PWA offline/update-flow not verified under real offline use
+6. No caching/rate-limit handling for OpenLibrary — a traffic spike risks third-party throttling with no fallback
+7. No accessibility pass — canvas-only UI, minimal keyboard nav, no screen-reader path
+
+**Marketing**
+1. No validated positioning/messaging — concept only, no landing page or waitlist signal
+2. No monetization model decided — blocks whether accounts/sync is "nice to have" or load-bearing
+3. No onboarding funnel — no one-click Goodreads-style import hook for acquisition
+4. No app store presence — PWA-only, Tauri/Capacitor deferred, limits discoverability
+5. No brand assets (logo, screenshots, store copy) or competitive teardown vs. Goodreads/StoryGraph/LibraryThing
+
+**Decision needed before any of this becomes a spec:** backend/auth stack and monetization model — both expensive to build wrong and gate the rest of the list.
+
 ## Constraints
 - Platform: Web app first (PWA); desktop (Tauri) and mobile (Capacitor) wrap the same codebase later — one engine, three shells
 - Stack: TypeScript + React + Vite (migrated from v1's vanilla JS). Canvas2D custom renderer carries over — this is a 3D-projected star field, not a graph-layout library (Konva/React Flow don't fit); render loop and camera/projection math port from v1 largely as-is, wrapped in React for state/UI chrome only. State via Zustand, kept out of the render loop (render loop reads refs, not React state, to hit 60fps)
@@ -93,3 +114,4 @@ Single Python script generates a self-contained HTML/PWA (vanilla JS, HTML5 Canv
 | 2026-09-28 | Spec 12 built and verified: Space/Tab/Escape wired, guarded so typing in a form control isn't hijacked. Typecheck clean, 63 tests passing (no new unit test added — store has no existing test file, single boolean toggle verified via smoke test instead), production build succeeds, browser smoke test confirms Tab opens/Escape closes the panel and Space freezes/unfreezes the canvas (pixel-identical while frozen, differs once resumed). | Closes spec 12 |
 | 2026-09-28 | Wrote spec 13: first Maintain-stage work — wire render fps, ISBN success rate, import round-trip, and crash-free sessions to the analytics adapter; document the PostHog/Sentry dashboard setup as a manual checklist item, same treatment as spec 10's Pages-enable step | intent.md's success-metrics table has had four runtime metrics with zero signal since it was written |
 | 2026-09-28 | Spec 13 built and verified: `ErrorBoundary` (crash-free signal + graceful fallback, since @sentry/browser alone doesn't catch React render errors), ISBN lookup success/not-found/failed events, import round-trip's `flagged` count added to `import_completed`, render fps sampled every ~10s. 64 unit tests passing (added a direct render-and-throw test for ErrorBoundary — its catch path can't be reached via the browser smoke test since the render loop runs in rAF, outside React's error-boundary scope). Typecheck clean, build succeeds, browser smoke test confirms the ISBN error path and the import ready/flagged split both render correctly. PostHog/Sentry secrets + dashboard alerts remain a manual checklist item (spec 13), not yet done. | Closes spec 13; first Maintain-stage code in the project |
+| 2026-09-28 | Ran a commercial-launch gap analysis (engineering + marketing); logged as new intent.md section "Post-MVP: Commercial launch gaps" | Project is feature-complete against v1 and deployed but not commercially shippable — no accounts/sync, no backend, no legal, no monetization, no GTM; recorded as scope rather than acted on silently |
