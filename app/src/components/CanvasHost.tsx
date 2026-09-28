@@ -60,7 +60,7 @@ export function CanvasHost() {
       }
       const { x, y } = toCanvasCoords(e.clientX, e.clientY);
       const state = useLibraryStore.getState();
-      const projected = projectAll(state.library, camera, renderTime, w, h);
+      const projected = projectAll(state.library, camera, renderTime, w, h, state.visual);
       hoveredId = pickStar(projected, x, y, 14 * dpr);
     }
     function onPointerUp(e: PointerEvent) {
@@ -68,7 +68,7 @@ export function CanvasHost() {
       if (moved) return; // was a drag, not a tap
       const { x, y } = toCanvasCoords(e.clientX, e.clientY);
       const state = useLibraryStore.getState();
-      const projected = projectAll(state.library, camera, renderTime, w, h);
+      const projected = projectAll(state.library, camera, renderTime, w, h, state.visual);
       const hitId = pickStar(projected, x, y, 14 * dpr);
       if (!hitId) {
         state.deselect();
@@ -103,6 +103,7 @@ export function CanvasHost() {
       renderTime += dt;
 
       const state = useLibraryStore.getState();
+      if (!dragging) camera.rotY += state.visual.rotationSpeed * dt;
       const connectLit =
         state.mode.kind === 'connect' ? deriveConnectionsFor(state.library, state.mode.starId) : null;
       const selectedId =
@@ -119,6 +120,7 @@ export function CanvasHost() {
         selectedId,
         connectLit,
         visibleIds,
+        visual: state.visual,
       });
 
       raf = requestAnimationFrame(frame);

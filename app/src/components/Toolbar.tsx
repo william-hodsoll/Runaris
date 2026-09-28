@@ -5,11 +5,12 @@ import { useState } from 'react';
 import { useLibraryStore } from '../store/useLibraryStore';
 import { downloadLibraryExport } from '../persistence/exportLibrary';
 import { AddByIsbn } from './AddByIsbn';
+import { CustomizePanel } from './CustomizePanel';
 import { ImportLibrary } from './ImportLibrary';
 import { ScanIsbn } from './ScanIsbn';
 import { SettingsModal } from './SettingsModal';
 
-type Panel = 'isbn' | 'import' | 'scan' | 'settings' | null;
+type Panel = 'isbn' | 'import' | 'scan' | 'settings' | 'customize' | null;
 
 export function Toolbar() {
   const [open, setOpen] = useState<Panel>(null);
@@ -46,6 +47,9 @@ export function Toolbar() {
         >
           Export
         </button>
+        <button onClick={() => setOpen('customize')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
+          Customize
+        </button>
         <button onClick={() => setOpen('settings')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
           Settings
         </button>
@@ -53,6 +57,7 @@ export function Toolbar() {
       {open === 'isbn' && <AddByIsbn onClose={() => setOpen(null)} />}
       {open === 'import' && <ImportLibrary onClose={() => setOpen(null)} />}
       {open === 'scan' && <ScanIsbn onClose={() => setOpen(null)} onUseTextEntry={() => setOpen('isbn')} />}
+      {open === 'customize' && <CustomizePanel onClose={() => setOpen(null)} />}
       {open === 'settings' && <SettingsModal onClose={() => setOpen(null)} />}
     </>
   );

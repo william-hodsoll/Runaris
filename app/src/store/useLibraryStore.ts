@@ -9,6 +9,7 @@ import { deriveSynapses } from '../model/connections';
 import type { BookInput, Library, Synapse } from '../model/types';
 import { loadLibrary, saveLibrary } from '../persistence';
 import { trackEvent } from '../analytics/analytics';
+import { DEFAULT_VISUAL_SETTINGS, loadVisualSettings, saveVisualSettings, type VisualSettings } from '../model/visualSettings';
 
 type Mode = { kind: 'idle' } | { kind: 'tooltip'; starId: string } | { kind: 'connect'; starId: string };
 export type AddBookSource = 'manual' | 'isbn';
@@ -20,6 +21,9 @@ type LibraryStore = {
   warning: string | null;
   hydrated: boolean;
   timelapseCutoff: number | null;
+  visual: VisualSettings;
+  setVisual: (partial: Partial<VisualSettings>) => void;
+  resetVisual: () => void;
   hydrate: () => Promise<void>;
   loadDemo: (books: BookInput[], seed?: number) => void;
   addBook: (book: BookInput, source?: AddBookSource) => void;
@@ -46,6 +50,17 @@ export const useLibraryStore = create<LibraryStore>((set, get) => ({
   warning: null,
   hydrated: false,
   timelapseCutoff: null,
+  visual: loadVisualSettings(),
+
+  setVisual: (partial) => {
+    const visual = { ...get().visual, ...partial };
+    set({ visual });
+    saveVisualSettings(visual);
+  },
+  resetVisual: () => {
+    set({ visual: { ...DEFAULT_VISUAL_SETTINGS } });
+    saveVisualSettings(DEFAULT_VISUAL_SETTINGS);
+  },
 
   hydrate: async () => {
     const { library, warning } = await loadLibrary();

@@ -21,6 +21,15 @@ export function countByGenre(library: Library): Map<string, number> {
   return counts;
 }
 
+export function countByStatus(library: Library): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const s of library.stars) {
+    if (!s.status) continue;
+    counts.set(s.status, (counts.get(s.status) ?? 0) + 1);
+  }
+  return counts;
+}
+
 export function totalPages(library: Library): number {
   return library.stars.reduce((sum, s) => sum + (s.pages || 0), 0);
 }

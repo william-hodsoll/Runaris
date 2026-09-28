@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildLibrary } from '../buildLibrary';
-import { averagePages, countByGenre, countBySubject, topSubjects, totalPages } from '../insights';
+import { averagePages, countByGenre, countByStatus, countBySubject, topSubjects, totalPages } from '../insights';
 
 const fixture = buildLibrary(
   [
@@ -41,5 +41,21 @@ describe('insights', () => {
     const top = topSubjects(fixture, 2);
     expect(top[0][0]).toBe('tech');
     expect(top[0][1]).toBe(2);
+  });
+
+  it('counts books by reading status, ignoring books with no status', () => {
+    const lib = buildLibrary(
+      [
+        { title: 'A', subjects: ['x'], status: 'reading' },
+        { title: 'B', subjects: ['x'], status: 'reading' },
+        { title: 'C', subjects: ['x'], status: 'finished' },
+        { title: 'D', subjects: ['x'] },
+      ],
+      1,
+    );
+    const counts = countByStatus(lib);
+    expect(counts.get('reading')).toBe(2);
+    expect(counts.get('finished')).toBe(1);
+    expect(Array.from(counts.values()).reduce((a, b) => a + b, 0)).toBe(3);
   });
 });

@@ -30,9 +30,11 @@ export function liveStarPos(
   constellation: Constellation,
   renderTime: number,
   gravity = 1,
+  breathing = true,
+  constellationSpin = 1,
 ): Vec3 {
-  const breath = breathScale(renderTime);
-  const angle = constellation.spinPhase + constellation.spinSpeed * renderTime;
+  const breath = breathing ? breathScale(renderTime) : 1;
+  const angle = constellation.spinPhase + constellation.spinSpeed * constellationSpin * renderTime;
   const rotatedOffset = rotateAroundAxis(star.offset, constellation.axis, angle);
   const centre = constellation.position;
   return {
