@@ -24,6 +24,8 @@ type LibraryStore = {
   visual: VisualSettings;
   setVisual: (partial: Partial<VisualSettings>) => void;
   resetVisual: () => void;
+  frozen: boolean;
+  toggleFrozen: () => void;
   hydrate: () => Promise<void>;
   loadDemo: (books: BookInput[], seed?: number) => void;
   addBook: (book: BookInput, source?: AddBookSource) => void;
@@ -61,6 +63,8 @@ export const useLibraryStore = create<LibraryStore>((set, get) => ({
     set({ visual: { ...DEFAULT_VISUAL_SETTINGS } });
     saveVisualSettings(DEFAULT_VISUAL_SETTINGS);
   },
+  frozen: false,
+  toggleFrozen: () => set((s) => ({ frozen: !s.frozen })),
 
   hydrate: async () => {
     const { library, warning } = await loadLibrary();

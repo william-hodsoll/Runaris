@@ -1,7 +1,7 @@
 // Minimal toolbar exposing the add-book entry points shipped so far. Not a
 // full nav system (out of scope) — just enough chrome to reach the features
 // built across specs 02-09.
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLibraryStore } from '../store/useLibraryStore';
 import { downloadLibraryExport } from '../persistence/exportLibrary';
 import { AddByIsbn } from './AddByIsbn';
@@ -12,9 +12,33 @@ import { SettingsModal } from './SettingsModal';
 
 type Panel = 'isbn' | 'import' | 'scan' | 'settings' | 'customize' | null;
 
+// Ignore shortcuts while typing in a form control — see specs/12-keyboard-controls.md.
+function isTypingTarget(el: EventTarget | null): boolean {
+  if (!(el instanceof HTMLElement)) return false;
+  return el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable;
+}
+
 export function Toolbar() {
   const [open, setOpen] = useState<Panel>(null);
   const library = useLibraryStore((s) => s.library);
+  const toggleFrozen = useLibraryStore((s) => s.toggleFrozen);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (isTypingTarget(e.target)) return;
+      if (e.key === ' ') {
+        e.preventDefault();
+        toggleFrozen();
+      } else if (e.key === 'Tab') {
+        e.preventDefault();
+        setOpen((prev) => (prev === 'customize' ? null : 'customize'));
+      } else if (e.key === 'Escape') {
+        setOpen(null);
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [toggleFrozen]);
 
   return (
     <>

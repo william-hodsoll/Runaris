@@ -98,11 +98,11 @@ export function CanvasHost() {
     let last_t = performance.now();
 
     function frame(now: number) {
-      const dt = Math.min(0.05, (now - last_t) / 1000);
+      const state = useLibraryStore.getState();
+      const dt = state.frozen ? 0 : Math.min(0.05, (now - last_t) / 1000);
       last_t = now;
       renderTime += dt;
 
-      const state = useLibraryStore.getState();
       if (!dragging) camera.rotY += state.visual.rotationSpeed * dt;
       const connectLit =
         state.mode.kind === 'connect' ? deriveConnectionsFor(state.library, state.mode.starId) : null;
