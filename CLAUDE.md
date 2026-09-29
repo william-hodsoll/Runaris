@@ -44,7 +44,7 @@ A "cosmos" visualization of a personal book library: books as stars, subjects as
 4. Agent review, then human review for: data model, persistence, security
 5. Breached metric -> new intent entry, not a quiet fix
 6. Every scope, architecture, or process decision (made by the user, or by Claude and confirmed) is appended to the Decisions log in `intent.md` in the same turn it's made — no separate ask, no batching for later
-7. Before every action, confirm the current model is the right fit for that action's difficulty (data model/persistence/security design and root-cause debugging warrant the highest-capability model available; mechanical edits, verification, and status checks don't) — flag a mismatch to the user rather than defaulting silently
+7. Before every action, confirm the current model is the right fit for that action's difficulty (data model/persistence/security design and root-cause debugging warrant the highest-capability model available; mechanical edits, verification, and status checks don't). On a mismatch: stop all work and ask the user to confirm switching to the better model before proceeding — don't just flag it and continue. (Claude can't switch its own model; this means pausing and asking, not silently powering through.)
 
 ## Known pitfalls
 - [TBD: add each recurring agent mistake here as it happens]
