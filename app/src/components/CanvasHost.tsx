@@ -132,6 +132,7 @@ export function CanvasHost() {
         connectLit,
         visibleIds,
         visual: state.visual,
+        searchQuery: state.searchQuery,
       });
 
       raf = requestAnimationFrame(frame);

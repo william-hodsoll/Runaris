@@ -1,6 +1,6 @@
-// Minimal toolbar exposing the add-book entry points shipped so far. Not a
-// full nav system (out of scope) — just enough chrome to reach the features
-// built across specs 02-09.
+// Toolbar chrome: the add-book entry points, library search, and settings
+// panels. Add-flows collapsed into one dropdown and a search box added per
+// specs/16-search-and-toolbar-cleanup.md (previously 4 separate add buttons).
 import { useEffect, useState } from 'react';
 import { useLibraryStore } from '../store/useLibraryStore';
 import { downloadLibraryExport } from '../persistence/exportLibrary';
@@ -13,6 +13,8 @@ import { SettingsModal } from './SettingsModal';
 
 type Panel = 'add' | 'isbn' | 'import' | 'scan' | 'settings' | 'customize' | null;
 
+const btnStyle = { padding: '6px 12px', borderRadius: 8, cursor: 'pointer' } as const;
+
 // Ignore shortcuts while typing in a form control — see specs/12-keyboard-controls.md.
 function isTypingTarget(el: EventTarget | null): boolean {
   if (!(el instanceof HTMLElement)) return false;
@@ -21,8 +23,11 @@ function isTypingTarget(el: EventTarget | null): boolean {
 
 export function Toolbar() {
   const [open, setOpen] = useState<Panel>(null);
+  const [addMenuOpen, setAddMenuOpen] = useState(false);
   const library = useLibraryStore((s) => s.library);
   const toggleFrozen = useLibraryStore((s) => s.toggleFrozen);
+  const searchQuery = useLibraryStore((s) => s.searchQuery);
+  const setSearchQuery = useLibraryStore((s) => s.setSearchQuery);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -35,11 +40,17 @@ export function Toolbar() {
         setOpen((prev) => (prev === 'customize' ? null : 'customize'));
       } else if (e.key === 'Escape') {
         setOpen(null);
+        setAddMenuOpen(false);
       }
     }
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [toggleFrozen]);
+
+  function openPanel(panel: Panel) {
+    setAddMenuOpen(false);
+    setOpen(panel);
+  }
 
   return (
     <>
@@ -51,34 +62,78 @@ export function Toolbar() {
           display: 'flex',
           gap: 8,
           flexWrap: 'wrap',
+          alignItems: 'center',
           fontFamily: 'system-ui, sans-serif',
           fontSize: 13,
           zIndex: 10,
         }}
       >
-        <button onClick={() => setOpen('add')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
-          + Add a book
-        </button>
-        <button onClick={() => setOpen('scan')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
-          Scan barcode
-        </button>
-        <button onClick={() => setOpen('isbn')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
-          + Add by ISBN
-        </button>
-        <button onClick={() => setOpen('import')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
-          Import library
-        </button>
+        <div style={{ position: 'relative' }}>
+          <button onClick={() => setAddMenuOpen((v) => !v)} style={btnStyle}>
+            + Add ▾
+          </button>
+          {addMenuOpen && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '100%',
+                left: 0,
+                marginTop: 4,
+                background: '#FDFAF4',
+                border: '1px solid #EBEDE0',
+                borderRadius: 8,
+                padding: 4,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2,
+                minWidth: 160,
+              }}
+            >
+              <button onClick={() => openPanel('add')} style={{ ...btnStyle, textAlign: 'left' }}>
+                Add a book
+              </button>
+              <button onClick={() => openPanel('isbn')} style={{ ...btnStyle, textAlign: 'left' }}>
+                Add by ISBN
+              </button>
+              <button onClick={() => openPanel('scan')} style={{ ...btnStyle, textAlign: 'left' }}>
+                Scan barcode
+              </button>
+              <button onClick={() => openPanel('import')} style={{ ...btnStyle, textAlign: 'left' }}>
+                Import library
+              </button>
+            </div>
+          )}
+        </div>
+        <div style={{ position: 'relative' }}>
+          <input
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => e.stopPropagation()}
+            placeholder="Search your library"
+            aria-label="Search your library"
+            style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid #EBEDE0', width: 180 }}
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              aria-label="Clear search"
+              style={{ position: 'absolute', right: 4, top: 4, border: 'none', background: 'none', cursor: 'pointer' }}
+            >
+              ×
+            </button>
+          )}
+        </div>
         <button
           onClick={() => downloadLibraryExport(library)}
           disabled={library.stars.length === 0}
-          style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}
+          style={btnStyle}
         >
           Export
         </button>
-        <button onClick={() => setOpen('customize')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
+        <button onClick={() => openPanel('customize')} style={btnStyle}>
           Customize
         </button>
-        <button onClick={() => setOpen('settings')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
+        <button onClick={() => openPanel('settings')} style={btnStyle}>
           Settings
         </button>
       </div>

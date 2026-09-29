@@ -5,6 +5,7 @@
 // specs/02-react-vite-port.md).
 import type { Library } from '../model/types';
 import type { VisualSettings } from '../model/visualSettings';
+import { starMatchesSearch } from '../model/search';
 import type { Camera } from './camera';
 import { project } from './camera';
 import { liveStarPos } from './liveStarPos';
@@ -20,6 +21,7 @@ export type DrawState = {
   connectLit: Set<string> | null; // non-null while in connect mode
   visibleIds: Set<string> | null; // non-null while scrubbing the timelapse
   visual: VisualSettings;
+  searchQuery: string;
 };
 
 const BG = '#F7F1E8';
@@ -36,6 +38,11 @@ export function draw(ctx: CanvasRenderingContext2D, w: number, h: number, state:
 
   const filterOn = visual.statusFilter !== 'all';
   const matchesFilter = (starId: string) => starById.get(starId)?.status === visual.statusFilter;
+  const searchOn = state.searchQuery !== '';
+  const matchesSearch = (starId: string) => {
+    const s = starById.get(starId);
+    return !!s && starMatchesSearch(s, state.searchQuery);
+  };
 
   for (const star of state.library.stars) {
     if (state.visibleIds && !state.visibleIds.has(star.id)) continue;
@@ -55,6 +62,7 @@ export function draw(ctx: CanvasRenderingContext2D, w: number, h: number, state:
       const b = projectedById.get(syn.b);
       if (!a || !b) continue;
       if (filterOn && !(matchesFilter(syn.a) && matchesFilter(syn.b))) continue;
+      if (searchOn && !(matchesSearch(syn.a) && matchesSearch(syn.b))) continue;
       const inConnectMode = state.connectLit !== null;
       ctx.strokeStyle = inConnectMode ? 'rgba(0,0,0,0.03)' : 'rgba(0,0,0,0.08)';
       ctx.beginPath();
@@ -91,7 +99,8 @@ export function draw(ctx: CanvasRenderingContext2D, w: number, h: number, state:
     const twinkle = 0.85 + 0.15 * Math.sin(state.renderTime * star.speed + star.phase);
     const dimmedByConnect = state.connectLit !== null && !state.connectLit.has(star.id) && star.id !== state.selectedId;
     const dimmedByFilter = filterOn && !matchesFilter(star.id);
-    const dimmed = dimmedByConnect || dimmedByFilter;
+    const dimmedBySearch = searchOn && !matchesSearch(star.id);
+    const dimmed = dimmedByConnect || dimmedByFilter || dimmedBySearch;
     const radius = Math.max(1, star.size * 3.2 * proj.persp * visual.starBrightness);
     const constellationIndex = constellationIndexById.get(star.constellationId) ?? 0;
 

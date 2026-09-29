@@ -29,6 +29,8 @@ type LibraryStore = {
   resetVisual: () => void;
   frozen: boolean;
   toggleFrozen: () => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
   session: Session | null;
   signIn: (email: string) => Promise<{ ok: true } | { ok: false; error: string }>;
   signOut: () => Promise<void>;
@@ -101,6 +103,8 @@ export const useLibraryStore = create<LibraryStore>((set, get) => ({
   },
   frozen: false,
   toggleFrozen: () => set((s) => ({ frozen: !s.frozen })),
+  searchQuery: '',
+  setSearchQuery: (query) => set({ searchQuery: query }),
 
   session: null,
   signIn: (email) => signInWithMagicLink(email),
