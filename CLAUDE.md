@@ -49,6 +49,7 @@ A "cosmos" visualization of a personal book library: books as stars, subjects as
 - [TBD: add each recurring agent mistake here as it happens]
 - v1's render loop depends on live/mutable arrays (STARS/CENTRES/EDGES) read every frame outside React state — don't route this through React state/props or perf will regress
 - A misnamed GitHub Actions secret reference (`${{ secrets.TYPO_NAME }}`) silently resolves to an empty string — no error, no warning, build succeeds with blank env vars. When a deployed feature that depends on a secret doesn't work despite the workflow being green, verify the secret NAME character-by-character on the repo's Settings → Secrets and variables → Actions page before assuming a code bug (bit us with `VITTE_SUPABASE_*` vs `VITE_SUPABASE_*`)
+- CI's `node-version:` in a workflow file must track the strictest `engines.node` of any devDependency (check `node_modules/<pkg>/package.json`), not just whatever runs locally. jsdom 30 requires Node ^22.22/^24.15/>=26; CI was pinned to Node 20, so every single CI run failed on `npm test` from the very first commit — invisible locally because the sandbox already runs Node 22. A red "CI" check next to an otherwise-fine deploy is a version-pin mismatch to check before assuming a code/test bug. `app/package.json` now declares `engines.node` as a tripwire
 
 ## Specs
 - Template: `specs/_template.md`
