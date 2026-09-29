@@ -21,10 +21,9 @@ function sizeFromPages(pages: number, pMin: number, pMax: number, rng: () => num
   return base + uniform(rng, -0.08, 0.08);
 }
 
-let idCounter = 0;
+// UUIDs, not a module counter — see specs/17-sync-integrity.md P0-1.
 function nextId(prefix: string): string {
-  idCounter += 1;
-  return `${prefix}-${idCounter}`;
+  return `${prefix}-${crypto.randomUUID()}`;
 }
 
 export function buildLibrary(books: BookInput[], seed?: number): Library {

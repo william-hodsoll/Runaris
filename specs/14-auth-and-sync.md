@@ -1,5 +1,9 @@
 # Spec: Supabase auth + library sync (foundation)
 
+> **Superseded in part by `specs/17-sync-integrity.md`:** the last-write-wins
+> timestamp design below was replaced by a 3-way merge. Auth, schema, and UI
+> sections still apply.
+
 ## Requirement
 Foundation for the freemium paid tier: accounts + cross-device library sync, gated behind sign-in. Per intent.md's 2026-09-28 decisions — Supabase for backend/auth, freemium for monetization. Explicitly scoped to auth+sync only: billing/tier enforcement (who's actually paid) is separate future scope, not built here. Signed-out use stays exactly as it is today — 100% local, zero backend calls, no regression risk to the free tier.
 

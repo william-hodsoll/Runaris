@@ -10,10 +10,10 @@ const PALETTE_POOL = [
   '#c8a4f0', '#ff9ab8', '#9eddff', '#ffd089',
 ];
 
-let idCounter = 0;
+// UUIDs, not a module counter: a counter restarts at 0 every page load and
+// reissued ids already in the saved library (specs/17-sync-integrity.md P0-1).
 function nextId(prefix: string): string {
-  idCounter += 1;
-  return `${prefix}-added-${idCounter}`;
+  return `${prefix}-${crypto.randomUUID()}`;
 }
 
 export function addBook(library: Library, book: BookInput, seed?: number): Library {

@@ -1,57 +1,56 @@
-// Mocks the Supabase client entirely — no real network in unit tests, same
-// pattern as indexeddb.test.ts mocking fake-indexeddb. See
-// specs/14-auth-and-sync.md.
+// Mocks the Supabase client entirely — no real network in unit tests. See
+// specs/17-sync-integrity.md.
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { buildLibrary } from '../../model/buildLibrary';
 
-const state: { row: { library: unknown; updated_at: string } | null; upserts: unknown[] } = {
-  row: null,
-  upserts: [],
-};
+const state: { row: { library: unknown } | null; fail: boolean } = { row: null, fail: false };
 
 vi.mock('../../auth/supabaseClient', () => ({
   supabase: {
     from: () => ({
       select: () => ({
         eq: () => ({
-          maybeSingle: async () => (state.row ? { data: state.row, error: null } : { data: null, error: null }),
+          maybeSingle: async () =>
+            state.fail ? { data: null, error: { message: 'network down' } } : { data: state.row, error: null },
         }),
       }),
-      upsert: async (row: { user_id: string; library: unknown; updated_at: string }) => {
-        state.upserts.push(row);
-        state.row = { library: row.library, updated_at: row.updated_at };
+      upsert: async (row: { library: unknown }) => {
+        state.row = { library: row.library };
         return { error: null };
       },
     }),
   },
 }));
 
-import { pullRemoteLibrary, pushLibrary, getLocalUpdatedAt, markLocalUpdated } from '../sync';
+import { loadSyncBase, pullRemoteLibrary, pushLibrary, saveSyncBase } from '../sync';
 
-describe('sync', () => {
+describe('sync I/O', () => {
   beforeEach(() => {
     state.row = null;
-    state.upserts = [];
+    state.fail = false;
     localStorage.clear();
   });
 
-  it('pullRemoteLibrary returns null when nothing is synced yet', async () => {
-    expect(await pullRemoteLibrary('user-1')).toBeNull();
+  it('distinguishes "nothing synced yet" from a failed pull', async () => {
+    expect(await pullRemoteLibrary('u')).toEqual({ ok: true, library: null });
+    state.fail = true;
+    expect((await pullRemoteLibrary('u')).ok).toBe(false);
   });
 
-  it('pushLibrary then pullRemoteLibrary round-trips the library and a comparable timestamp', async () => {
+  it('push then pull round-trips the library', async () => {
     const lib = buildLibrary([{ title: 'A', subjects: ['x'] }], 1);
-    const result = await pushLibrary('user-1', lib);
-    expect(result.ok).toBe(true);
-
-    const pulled = await pullRemoteLibrary('user-1');
-    expect(pulled?.library).toEqual(lib);
-    expect(pulled?.updatedAt).toBeGreaterThan(0);
+    expect((await pushLibrary('u', lib)).ok).toBe(true);
+    expect(await pullRemoteLibrary('u')).toEqual({ ok: true, library: lib });
   });
 
-  it('local-updated-at persistence: defaults to 0, then reflects markLocalUpdated', () => {
-    expect(getLocalUpdatedAt()).toBe(0);
-    markLocalUpdated(12345);
-    expect(getLocalUpdatedAt()).toBe(12345);
+  it('rejects a malformed remote library instead of merging it', async () => {
+    state.row = { library: { nonsense: true } };
+    expect((await pullRemoteLibrary('u')).ok).toBe(false);
+  });
+
+  it('sync base persists per device', () => {
+    expect(loadSyncBase()).toBeNull();
+    saveSyncBase({ userId: 'u', starIds: ['a'] });
+    expect(loadSyncBase()).toEqual({ userId: 'u', starIds: ['a'] });
   });
 });

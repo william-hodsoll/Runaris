@@ -1,35 +1,51 @@
-// Additive sync layer over the local IndexedDB store — IndexedDB stays the
-// source of truth for rendering/offline use in both signed-in and
-// signed-out states (CLAUDE.md: render loop must never block on network).
-// Last-write-wins by timestamp; real conflict merge is a documented MVP
-// limitation. See specs/14-auth-and-sync.md.
+// Sync I/O over the local IndexedDB store — IndexedDB stays the source of
+// truth for rendering/offline use (CLAUDE.md: render loop never blocks on
+// network). Decisions are a 3-way merge against a per-device sync base, not
+// timestamps (two devices' clocks aren't comparable). See
+// specs/17-sync-integrity.md; orchestration lives in the store's syncNow().
 import { supabase } from '../auth/supabaseClient';
 import type { Library } from '../model/types';
+import { validateLibrary } from '../model/validate';
 
-const LAST_MODIFIED_KEY = 'neuralMind.lastModified.v1';
+const BASE_KEY = 'neuralMind.syncBase.v1';
 
-export function getLocalUpdatedAt(): number {
-  const raw = localStorage.getItem(LAST_MODIFIED_KEY);
-  return raw ? Number(raw) : 0;
-}
+/** Star ids the remote held after this device's last successful sync, and
+ * which account that was. */
+export type SyncBase = { userId: string; starIds: string[] };
 
-export function markLocalUpdated(at = Date.now()): void {
+export function loadSyncBase(): SyncBase | null {
   try {
-    localStorage.setItem(LAST_MODIFIED_KEY, String(at));
+    const raw = localStorage.getItem(BASE_KEY);
+    return raw ? (JSON.parse(raw) as SyncBase) : null;
   } catch {
-    // best-effort, matches persistence layer's convention elsewhere
+    return null;
   }
 }
 
-export async function pullRemoteLibrary(userId: string): Promise<{ library: Library; updatedAt: number } | null> {
-  if (!supabase) return null;
+export function saveSyncBase(base: SyncBase): void {
+  try {
+    localStorage.setItem(BASE_KEY, JSON.stringify(base));
+  } catch {
+    // best-effort; worst case next sync treats this device as first-sync (union, no drops)
+  }
+}
+
+/** A failed pull must never look like "remote is empty" — with a base, that
+ * would read as "every book was deleted elsewhere". */
+export async function pullRemoteLibrary(
+  userId: string,
+): Promise<{ ok: true; library: Library | null } | { ok: false; error: string }> {
+  if (!supabase) return { ok: false, error: 'Sync is not configured.' };
   const { data, error } = await supabase
     .from('libraries')
-    .select('library, updated_at')
+    .select('library')
     .eq('user_id', userId)
     .maybeSingle();
-  if (error || !data) return null;
-  return { library: data.library as Library, updatedAt: new Date(data.updated_at as string).getTime() };
+  if (error) return { ok: false, error: error.message };
+  if (!data) return { ok: true, library: null };
+  const { library, warning } = validateLibrary(data.library);
+  if (warning) return { ok: false, error: 'Synced library had an unexpected shape.' };
+  return { ok: true, library };
 }
 
 export async function pushLibrary(userId: string, library: Library): Promise<{ ok: true } | { ok: false; error: string }> {
@@ -39,16 +55,4 @@ export async function pushLibrary(userId: string, library: Library): Promise<{ o
     .upsert({ user_id: userId, library, updated_at: new Date().toISOString() });
   if (error) return { ok: false, error: error.message };
   return { ok: true };
-}
-
-// Debounced push so a burst of local saves (e.g. a CSV import) doesn't fire
-// one network request per book.
-let pushTimer: ReturnType<typeof setTimeout> | null = null;
-export function debouncedPush(userId: string, library: Library, onError: (message: string) => void, delayMs = 3000): void {
-  if (pushTimer) clearTimeout(pushTimer);
-  pushTimer = setTimeout(() => {
-    void pushLibrary(userId, library).then((result) => {
-      if (!result.ok) onError(`Could not sync your library: ${result.error}`);
-    });
-  }, delayMs);
 }
