@@ -44,7 +44,7 @@ A "cosmos" visualization of a personal book library: books as stars, subjects as
 4. Agent review, then human review for: data model, persistence, security
 5. Breached metric -> new intent entry, not a quiet fix
 6. Every scope, architecture, or process decision (made by the user, or by Claude and confirmed) is appended to the Decisions log in `intent.md` in the same turn it's made — no separate ask, no batching for later
-7. Before each check or edit, weigh whether a higher-capability model would materially improve the output (data model/persistence/security design, root-cause debugging, architecture calls) — if so, flag it to the user rather than defaulting silently to the current model
+7. Before every action, confirm the current model is the right fit for that action's difficulty (data model/persistence/security design and root-cause debugging warrant the highest-capability model available; mechanical edits, verification, and status checks don't) — flag a mismatch to the user rather than defaulting silently
 
 ## Known pitfalls
 - [TBD: add each recurring agent mistake here as it happens]
