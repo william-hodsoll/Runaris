@@ -116,7 +116,16 @@ export const useLibraryStore = create<LibraryStore>((set, get) => ({
 
     const session = await initSession();
     set({ session });
-    onSessionChange((s) => set({ session: s }));
+    // Bug found via user report ("test" book didn't show up after switching
+    // browsers): sign-in normally completes AFTER this initial hydrate — via
+    // the magic-link redirect firing onSessionChange, not via a session that
+    // already existed at load time — so the one-shot reconcile below never
+    // ran for that path. Reconcile on every null -> signed-in transition too.
+    onSessionChange((s) => {
+      const wasSignedOut = get().session === null;
+      set({ session: s });
+      if (s && wasSignedOut) void reconcileWithRemote(s.user.id, get, set);
+    });
     if (session) await reconcileWithRemote(session.user.id, get, set);
   },
 
