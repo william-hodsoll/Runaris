@@ -4,13 +4,14 @@
 import { useEffect, useState } from 'react';
 import { useLibraryStore } from '../store/useLibraryStore';
 import { downloadLibraryExport } from '../persistence/exportLibrary';
+import { AddBookManual } from './AddBookManual';
 import { AddByIsbn } from './AddByIsbn';
 import { CustomizePanel } from './CustomizePanel';
 import { ImportLibrary } from './ImportLibrary';
 import { ScanIsbn } from './ScanIsbn';
 import { SettingsModal } from './SettingsModal';
 
-type Panel = 'isbn' | 'import' | 'scan' | 'settings' | 'customize' | null;
+type Panel = 'add' | 'isbn' | 'import' | 'scan' | 'settings' | 'customize' | null;
 
 // Ignore shortcuts while typing in a form control — see specs/12-keyboard-controls.md.
 function isTypingTarget(el: EventTarget | null): boolean {
@@ -55,6 +56,9 @@ export function Toolbar() {
           zIndex: 10,
         }}
       >
+        <button onClick={() => setOpen('add')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
+          + Add a book
+        </button>
         <button onClick={() => setOpen('scan')} style={{ padding: '6px 12px', borderRadius: 8, cursor: 'pointer' }}>
           Scan barcode
         </button>
@@ -78,6 +82,7 @@ export function Toolbar() {
           Settings
         </button>
       </div>
+      {open === 'add' && <AddBookManual onClose={() => setOpen(null)} />}
       {open === 'isbn' && <AddByIsbn onClose={() => setOpen(null)} />}
       {open === 'import' && <ImportLibrary onClose={() => setOpen(null)} />}
       {open === 'scan' && <ScanIsbn onClose={() => setOpen(null)} onUseTextEntry={() => setOpen('isbn')} />}
