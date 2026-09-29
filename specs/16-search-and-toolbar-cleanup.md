@@ -33,6 +33,15 @@ to attach it to; the cosmos-dimming half of search is the part that answers
   search, confirm other stars dim (pixel/alpha check) and the added one
   doesn't.
 
+## Amendment: pulsing glow on matches
+v1's search only dims non-matches (`dim = searchOk ? 1.0 : 0.10`) — it never
+highlights matches beyond leaving them undimmed. User feedback after ship:
+"barely visible." This is new scope beyond the port (logged in intent.md, not
+silently added): each matching star (while `searchOn`) draws an additional
+outward-pulsing ring — radius oscillates with `renderTime`, alpha fades as it
+expands, same twinkle-style sinusoidal drive already used for star brightness
+so it stays perf-free (no new state, no new RAF).
+
 ## Rollback
 Revert `model/search.ts` (new), `store/useLibraryStore.ts`, `render/draw.ts`,
 `components/Toolbar.tsx`. `searchQuery` isn't persisted, so no migration.

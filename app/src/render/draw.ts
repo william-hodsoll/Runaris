@@ -112,6 +112,20 @@ export function draw(ctx: CanvasRenderingContext2D, w: number, h: number, state:
     ctx.beginPath();
     ctx.arc(proj.sx, proj.sy, radius, 0, Math.PI * 2);
     ctx.fill();
+
+    // Search-match highlight: v1 only dims non-matches, never marks matches —
+    // "barely visible" feedback led to this pulsing ring (new scope, logged
+    // in intent.md; see specs/16-search-and-toolbar-cleanup.md amendment).
+    if (searchOn && !dimmed) {
+      const period = 1.4;
+      const t = ((state.renderTime + star.phase) % period) / period;
+      ctx.globalAlpha = (1 - t) * 0.6;
+      ctx.strokeStyle = '#5a7340';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(proj.sx, proj.sy, radius + t * 18 * proj.persp, 0, Math.PI * 2);
+      ctx.stroke();
+    }
   }
   ctx.globalAlpha = 1;
 }
